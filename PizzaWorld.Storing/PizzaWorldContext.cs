@@ -7,6 +7,7 @@ namespace PizzaWorld.Storing
 {
     public class PizzaWorldContext : DbContext
     {
+        public DbSet<PrebuiltPizza> PrebuiltPizzas{get;set;}
         public DbSet<Store> Stores { get; set; }    
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Crust> Crusts { get; set; }
@@ -60,7 +61,9 @@ namespace PizzaWorld.Storing
                 new Topping() { name = "Cheese",price = 0,EntityID=1},
                 new Topping() { name = "Premium Chicken",price = 2,EntityID=2},
                 new Topping() { name = "Pulled Pork",price = 2,EntityID=3},
-                new Topping() { name = "Mushroom",price = 0,EntityID=4}
+                new Topping() { name = "Mushroom",price = 0,EntityID=4},
+                new Topping() { name = "Ham", price = 1, EntityID = 5},
+                new Topping() { name = "Pineapple", price = 1, EntityID = 6}
             }
             );
             builder.Entity<Customer>().HasData(new List<Customer>
@@ -69,6 +72,11 @@ namespace PizzaWorld.Storing
                 new Customer() { Name = "Elmer2",EntityID=2},
                 new Customer() { Name = "user3",EntityID=3}
             }
+            builder.Entity<PrebuiltPizza>().HasData(new List<PrebuiltPizza>
+            {
+                new PrebuiltPizza() { name = "Meat Heaven", }
+            }
+
             );
         }
     }

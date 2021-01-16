@@ -21,7 +21,7 @@ namespace PizzaWorld.Storing
     }
     public List<string> GetPizzaNames()
     {
-        return _ctx.Pizzas.Select(p => p.name).ToList();    
+        return _ctx.Pizzas.Select(p => p.Name).ToList();    
     }
     public List<string> GetCustomerNames()
     {

@@ -26,10 +26,10 @@ namespace PizzaWorld.Testing
             var sut = new Order();
             List<APizzaModel> p = new List<APizzaModel>();
             APizzaModel pizza = new Pizza();
-            pizza.price = 20;
+            pizza.Price = 20;
             p.Add(pizza);
             sut.CalculatePrice();
-            var actual = sut.price;
+            var actual = sut.Price;
 
             Assert.IsType<double>(actual);
             //Assert.NotNull(actual);

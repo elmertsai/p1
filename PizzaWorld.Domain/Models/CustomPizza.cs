@@ -13,38 +13,38 @@ namespace PizzaWorld.Domain.Models
     }
     public CustomPizza(Crust c, Size s,List<Topping> t)
     {
-      crust = c;
-      size = s;
-      toppings = t;
+      Crust = c;
+      Size = s;
+      Toppings = t;
       SetPrice();
     }
     protected override void SetName(string n)
     {
-      this.name = n;
+      this.Name = n;
     }
 
     public override void SetPrice()
     {
       double sum=0;
-      foreach (var item in toppings)
+      foreach (var item in Toppings)
       {
-          sum += item.price;
+          sum += item.Price;
       }
-      sum += size.price;
-      sum += crust.price;
-      price = sum+10;
+      sum += Size.Price;
+      sum += Crust.Price;
+      Price = sum+10;
     }
     protected override void AddCrust(Crust c) 
     { 
-      crust = c;
+      Crust = c;
     }
     protected override void AddSize(Size s) 
     { 
-      size=s;
+      Size=s;
     }
     protected override void AddToppings(List<Topping> t) 
     { 
-      toppings = t;
+      Toppings = t;
     }
   }
 }

@@ -14,7 +14,7 @@ namespace PizzaWorld.Domain.Models
         public Customer Customer { get; set; }
         public Store Store {get;set;}
 
-        public double price { get; set; }
+        public double Price { get; set; }
         public DateTime Ordertime { get; set; }
         public Order()
         {
@@ -32,9 +32,9 @@ namespace PizzaWorld.Domain.Models
             double sum=0;
             foreach (var item in Pizzas)
             {
-                sum += item.price;
+                sum += item.Price;
             }
-            price = sum;
+            Price = sum;
         }
 
         public override string ToString()
@@ -42,11 +42,11 @@ namespace PizzaWorld.Domain.Models
             var sb = new System.Text.StringBuilder();
             int counter = 1;
             sb.Append(String.Format("{0,-25} {1,-25} {2,-25}\n\n","Customer name","Order Time","Total Price"));
-            sb.Append(String.Format("{0,-25} {1,-25} {2,-25}\n",Customer.Name,Ordertime,"$"+price));
+            sb.Append(String.Format("{0,-25} {1,-25} {2,-25}\n",Customer.Name,Ordertime,"$"+Price));
             sb.Append(String.Format("{0,-15} {1,-15} {2,-15}\n\n","Number","Pizza name","Price"));
             foreach(var p in Pizzas)
             {
-                sb.Append(String.Format("{0,-15} {1,-15} {2,-15}\n",counter,p.name,p.price));
+                sb.Append(String.Format("{0,-15} {1,-15} {2,-15}\n",counter,p.Name,p.Price));
                 counter++;
             } 
             return sb.ToString();
