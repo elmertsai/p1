@@ -1,0 +1,27 @@
+@model PizzaWorld.Client.Models.OrderViewModel
+
+@*html way*@
+
+<form action="/order/post" method="POST">
+@foreach (var item in Model.Stores)
+{
+    <input type="radio" name="store" id="@item.Name" value=@item.Name>
+    <label for="@item.Name">@item.Name</label>
+}
+
+
+</form>
+
+@*html helper way*@
+@using (@Html.BeginForm("post","order",null,FormMethod.Post))
+{
+    @Html.AntiForgeryToken(); @*Cross site request forgery (csrf) prevention*@
+}
+
+
+@*tag helper way*@
+<form asp-action="post" asp-controller="order" method="post" asp-antiforgery= "true">
+
+        <input type="radio" asp-for="@Model.Stores"name = "@Model.Store">
+        
+</form>

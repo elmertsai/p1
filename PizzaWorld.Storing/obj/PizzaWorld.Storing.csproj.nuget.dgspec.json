@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/elmer/revature/projects/p0/PizzaWorld.Storing/PizzaWorld.Storing.csproj": {}
+  },
+  "projects": {
+    "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj",
+        "projectName": "PizzaWorld.Domain",
+        "projectPath": "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj",
+        "packagesPath": "/home/elmer/.nuget/packages/",
+        "outputPath": "/home/elmer/revature/projects/p0/PizzaWorld.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/elmer/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/elmer/revature/projects/p0/PizzaWorld.Storing/PizzaWorld.Storing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/elmer/revature/projects/p0/PizzaWorld.Storing/PizzaWorld.Storing.csproj",
+        "projectName": "PizzaWorld.Storing",
+        "projectPath": "/home/elmer/revature/projects/p0/PizzaWorld.Storing/PizzaWorld.Storing.csproj",
+        "packagesPath": "/home/elmer/.nuget/packages/",
+        "outputPath": "/home/elmer/revature/projects/p0/PizzaWorld.Storing/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/elmer/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj": {
+                "projectPath": "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "microsoft.entityframeworkcore.design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "microsoft.entityframeworkcore.sqlserver": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
