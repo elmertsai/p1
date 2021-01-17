@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj",
+      "projectUniqueName": "/home/elmer/revature/projects/p1/PizzaWorld.Domain/PizzaWorld.Domain.csproj",
       "projectName": "PizzaWorld.Domain",
-      "projectPath": "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj",
+      "projectPath": "/home/elmer/revature/projects/p1/PizzaWorld.Domain/PizzaWorld.Domain.csproj",
       "packagesPath": "/home/elmer/.nuget/packages/",
-      "outputPath": "/home/elmer/revature/projects/p0/PizzaWorld.Domain/obj/",
+      "outputPath": "/home/elmer/revature/projects/p1/PizzaWorld.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/elmer/.nuget/NuGet/NuGet.Config"

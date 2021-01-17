@@ -4,6 +4,6 @@ namespace PizzaWorld.Domain.Models
 {
   public class Crust : AProduct
   {
-
+    
   }
 }

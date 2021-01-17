@@ -9,7 +9,8 @@ using PizzaWorld.Client.Models;
 
 namespace PizzaWorld.Client.Controllers
 {
-
+    [Route("")]
+    [Route("[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,15 +19,14 @@ namespace PizzaWorld.Client.Controllers
         {
             _logger = logger;
         }
-        [Route("[controller]/[action]")]
-        [Route("[controller]")]
         [Route("")]
-        // [Route("Home")]
-        // [Route("Home/Index")]
+        [Route("[action]")]
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+        [Route("[action]")]
 
         public IActionResult Privacy()
         {

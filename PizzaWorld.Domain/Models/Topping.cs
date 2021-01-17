@@ -5,7 +5,8 @@ namespace PizzaWorld.Domain.Models
 {
   public class Topping : AProduct
   {
-    // public List<APizzaModel> Pizzas {get;set;}
-    // public long APizzaModelEntityID {get;set;}
+    public ICollection<APizzaModel> Pizzas {get;set;}
+    public ICollection<PrebuiltPizza> PrebuiltPizzas { get; set; }
+    
   }
 }

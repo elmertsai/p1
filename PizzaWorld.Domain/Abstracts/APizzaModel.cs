@@ -7,7 +7,7 @@ namespace PizzaWorld.Domain.Abstracts
   {
     public Crust Crust { get; set; }
     public Size Size { get; set; }
-    public List<Topping> Toppings { get; set; }
+    public ICollection<Topping> Toppings { get; set; }
     // public long CrustEntityID { get; set; }
     // public long SizeEntityID {get;set;}
 

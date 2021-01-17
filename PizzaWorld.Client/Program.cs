@@ -4,16 +4,36 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PizzaWorld.Domain.Models;
+using PizzaWorld.Storing;
 
 namespace PizzaWorld.Client
 {
     public class Program
     {
+        // private static readonly PizzaWorldContext _context = new PizzaWorldContext();
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            using (var serviceScope = host.Services.CreateScope())
+            {
+                var services = serviceScope.ServiceProvider;
+
+                try
+                {
+                    var myRepo = services.GetRequiredService<PizzaWorldRepository>();
+                    myRepo.PrebuiltPizza();
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred.");
+                }
+            }
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +42,7 @@ namespace PizzaWorld.Client
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+        
     }
+    
 }

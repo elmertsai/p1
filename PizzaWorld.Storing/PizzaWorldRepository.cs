@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -40,6 +41,10 @@ namespace PizzaWorld.Storing
     {
         return _ctx.Pizzas.ToList();
     }
+    public IEnumerable<PrebuiltPizza> ReadPrebuiltPizzas()
+    {
+        return _ctx.PrebuiltPizzas.ToList();
+    }
     public IEnumerable<Crust> ReadCrust()
     {
         return _ctx.Crusts.ToList();
@@ -56,7 +61,10 @@ namespace PizzaWorld.Storing
                     .ToList();
         return users;
     }
-
+    public IEnumerable<Size> ReadSize()
+    {
+        return _ctx.Sizes.ToList();
+    }   
     public void Save(Store store)
     {
       _ctx.Stores.Add(store); 
@@ -73,6 +81,18 @@ namespace PizzaWorld.Storing
     public void Save(Order order)
     {
         _ctx.Orders.Add(order);
+    try
+    {
+        _ctx.SaveChanges();
+    }
+    finally
+    {
+        _ctx.Database.CloseConnection();
+    }
+    }
+    public void Save(PrebuiltPizza pizza)
+    {
+        _ctx.PrebuiltPizzas.Add(pizza);
     try
     {
         _ctx.SaveChanges();
@@ -143,5 +163,44 @@ namespace PizzaWorld.Storing
       o = order;
       _ctx.SaveChanges();
     }
+    public void PrebuiltPizza()
+        {
+            if(ReadPrebuiltPizzas().Count()==0)
+            {
+                Console.WriteLine("No Pizza found in DB! Adding pizzas");
+                Crust c=ReadCrust().FirstOrDefault(x => x.Name.Contains("Hand Tossed"));
+                Size s=ReadSize().FirstOrDefault(x => x.Name.Contains("Medium"));
+                Topping t1 =ReadTopping().FirstOrDefault(x => x.Name.Contains("Premium Chicken"));
+                Topping t2 =ReadTopping().FirstOrDefault(x => x.Name.Contains("Cheese"));
+                List<Topping> t = new List<Topping>{t1,t2};
+                PrebuiltPizza meatpizza1 = new PrebuiltPizza(c,s,t);
+                meatpizza1.Name = "Medium Hand Tossed Meat Pizza";
+                Save(meatpizza1);
+
+                
+                c=ReadCrust().FirstOrDefault(x => x.Name.Contains("Cheese-Stuffed"));
+                s=ReadSize().FirstOrDefault(x => x.Name.Contains("Large"));
+                t1 =ReadTopping().FirstOrDefault(x => x.Name.Contains("Premium Chicken"));
+                t2 =ReadTopping().FirstOrDefault(x => x.Name.Contains("Cheese"));
+                Topping t3 = ReadTopping().FirstOrDefault(x => x.Name.Contains("Pulled Pork"));
+                Topping t4 = ReadTopping().FirstOrDefault(x => x.Name.Contains("Mushroom"));
+                t = new List<Topping>{t1,t2,t3,t4};
+                PrebuiltPizza meatpizza2 = new PrebuiltPizza(c,s,t);
+                meatpizza2.Name = "Large Cheese Stuffed King of Pizza";
+                Save(meatpizza2);
+
+                c=ReadCrust().FirstOrDefault(x => x.Name.Contains("Thin"));
+                s=ReadSize().FirstOrDefault(x => x.Name.Contains("Small"));
+                t1 =ReadTopping().FirstOrDefault(x => x.Name.Contains("Cheese"));
+                t = new List<Topping>{t1};
+                PrebuiltPizza cheesepizza = new PrebuiltPizza(c,s,t);
+                cheesepizza.Name = "Small thin crust cheese pizza";
+                Save(cheesepizza);
+            }
+            else
+            {
+                Console.WriteLine("All set! Welcome to the Pizza Ordering App!");
+            }
+        }
 }
 }

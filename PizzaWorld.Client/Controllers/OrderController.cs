@@ -1,23 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PizzaWorld.Client.Models;
+using PizzaWorld.Domain.Models;
 using PizzaWorld.Storing;
 
 namespace PizzaWorld.Client.Controllers
 {
+    [Route("[controller]")]
     public class OrderController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly PizzaWorldRepository _ctx;
+        private readonly PizzaWorldContext _ctx;
 
-        public OrderController(ILogger<HomeController> logger, PizzaWorldRepository context)
+        public OrderController(PizzaWorldContext context)
         {
-            _logger = logger;
             _ctx = context;
             
         }
-        [Route("[controller]/[action]")]
-        [Route("[controller]")]
+        [Route("[action]")]
+        [HttpGet]
         public IActionResult Get()
         {
             return View("Order");
@@ -26,16 +29,27 @@ namespace PizzaWorld.Client.Controllers
         {
             return View("Order", new OrderViewModel());
         }
-        public IActionResult Post(OrderViewModel order)
+        [HttpPost]
+        public IActionResult Post(OrderViewModel model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View("Orderpass");
+                var order = new Order()
+                {
+                    Ordertime = DateTime.Now,
+                    Store = _ctx.Stores.FirstOrDefault(s => s.Name == model.Store)
+                };
+                if(_ctx.Orders == null)
+                {
+                    Console.WriteLine("Context Order is Null");
+                }
+
+                _ctx.Orders.Add(order);
+                _ctx.SaveChanges();
+
+                return View("OrderPlaced");
             }
-    
-            {
-                return View("OrderFail");
-            }
+            return View("home", model);
         }
         // public IActionResult Index()
         // {

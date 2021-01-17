@@ -5,48 +5,48 @@ namespace PizzaWorld.Domain.Models
 {
     public class PrebuiltPizza : AProduct
   {    
-    public Crust crust { get; set; }
-    public Size size { get; set; }
-    public List<Topping> toppings { get; set; }
+    public Crust Crust { get; set; }
+    public Size Size { get; set; }
+    public ICollection<Topping> Toppings { get; set; }
 
     public PrebuiltPizza()
     {
-   
+  
     }
     public PrebuiltPizza(Crust c, Size s,List<Topping> t)
     {
-      crust = c;
-      size = s;
-      toppings = t;
+      Crust = c;
+      Size = s;
+      Toppings = t;
       SetPrice();
     }
     protected void SetName(string n)
     {
-      this.name = n;
+      this.Name = n;
     }
 
     public void SetPrice()
     {
       double sum=0;
-      foreach (var item in toppings)
+      foreach (var item in Toppings)
       {
-          sum += item.price;
+          sum += item.Price;
       }
-      sum += size.price;
-      sum += crust.price;
-      price = sum+10;
+      sum += Size.Price;
+      sum += Crust.Price;
+      Price = sum+10;
     }
     protected void AddCrust(Crust c) 
     { 
-      crust = c;
+      Crust = c;
     }
     protected void AddSize(Size s) 
     { 
-      size=s;
+      Size=s;
     }
     protected void AddToppings(List<Topping> t) 
     { 
-      toppings = t;
+      Toppings = t;
     }
   }
 }

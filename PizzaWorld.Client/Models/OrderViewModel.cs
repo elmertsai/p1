@@ -7,7 +7,8 @@ namespace PizzaWorld.Client.Models
 {
     public class OrderViewModel
     { 
-        public List<Store> Stores { get; set; }
+        public List<string> Stores { get; set; }
+
         public List<Pizza> Pizzas { get; set; }
         
         [Required]
@@ -15,6 +16,16 @@ namespace PizzaWorld.Client.Models
         public List<string> PizzaSelection { get; set; }
         public string StoreSelection {get;set;}
         public string Name {get; set;}
+        // public OrderViewModel()
+        // {
+        //     Stores = new List<Store>()
+        //     {
+        //         new Store(){Name = "Store1"}
+        //         ,new Store(){Name = "Store2"}
+        //         ,new Store(){Name = "Store3"}
+
+        //     };
+        // }
 
     }
 }

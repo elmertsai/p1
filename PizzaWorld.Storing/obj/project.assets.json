@@ -5781,11 +5781,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/elmer/revature/projects/p0/PizzaWorld.Storing/PizzaWorld.Storing.csproj",
+      "projectUniqueName": "/home/elmer/revature/projects/p1/PizzaWorld.Storing/PizzaWorld.Storing.csproj",
       "projectName": "PizzaWorld.Storing",
-      "projectPath": "/home/elmer/revature/projects/p0/PizzaWorld.Storing/PizzaWorld.Storing.csproj",
+      "projectPath": "/home/elmer/revature/projects/p1/PizzaWorld.Storing/PizzaWorld.Storing.csproj",
       "packagesPath": "/home/elmer/.nuget/packages/",
-      "outputPath": "/home/elmer/revature/projects/p0/PizzaWorld.Storing/obj/",
+      "outputPath": "/home/elmer/revature/projects/p1/PizzaWorld.Storing/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/elmer/.nuget/NuGet/NuGet.Config"
@@ -5800,8 +5800,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj": {
-              "projectPath": "/home/elmer/revature/projects/p0/PizzaWorld.Domain/PizzaWorld.Domain.csproj"
+            "/home/elmer/revature/projects/p1/PizzaWorld.Domain/PizzaWorld.Domain.csproj": {
+              "projectPath": "/home/elmer/revature/projects/p1/PizzaWorld.Domain/PizzaWorld.Domain.csproj"
             }
           }
         }
