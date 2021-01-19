@@ -1,0 +1,21 @@
+@model PizzaWorld.Client.Models.OrderViewModel
+
+@{
+  ViewBag.Title = "Order PrebuiltPizza";
+  Layout = "_Layout";
+}
+<p>Welcome @Model.CustomerName !</p>
+<section>
+<h2>Order Prebuilt Pizza</h2>
+<form action="/order/AddPrebuiltPizza" method="POST">
+<p>Select a prebuilt pizza: </p>
+@foreach (var item in Model.PrebuiltPizzas)
+{
+    <input type="radio" name="pizza" id="@item.EntityID" value=@item.EntityID>
+    <label for="@item.Name">@item.Name</label>
+}
+<button type="submit">Add Pizza</button>:
+</form>
+
+</section>
+

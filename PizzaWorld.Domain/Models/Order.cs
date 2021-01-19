@@ -10,7 +10,7 @@ namespace PizzaWorld.Domain.Models
     {
        // private GenericPizzaFactory _pizzaFactory = new GenericPizzaFactory();
 
-        public List<APizzaModel> Pizzas {get;set;}
+        public ICollection<APizzaModel> Pizzas {get;set;}
         public Customer Customer { get; set; }
         public Store Store {get;set;}
 

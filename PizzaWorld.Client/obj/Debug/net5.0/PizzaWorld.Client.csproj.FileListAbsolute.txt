@@ -77,4 +77,13 @@
 /home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/Home.cshtml.g.cs
 /home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/_CustomerLayout.cshtml.g.cs
 /home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/mono_crash.21acb2acb0.0.json
-/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/Order.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/OrderPlaced.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/OrderReview.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/OrderCustomPizza.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/OrderMenu.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/OrderPrebuiltPizza.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Shared/OrderChooseStore.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/Humanizer.dll
+/home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Customer/CustomerOrderHistory.cshtml.g.cs

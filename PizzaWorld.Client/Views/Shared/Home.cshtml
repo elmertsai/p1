@@ -3,10 +3,12 @@
 @{
   ViewBag.Title = "Customer - Home";
   Layout = "_Layout";
+  TempData.Put("Customer",Model.Customer);
 }
 
 <section>
-  @Model.Name
+  <h2>Welcome @Model.Name !</h2>
+  <p>This is the customer home page</p>
 </section>
 
-@Html.Partial("Order", Model.Order)
+@Html.Partial("OrderChooseStore", Model)

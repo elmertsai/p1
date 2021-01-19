@@ -1,0 +1,46 @@
+@model PizzaWorld.Client.Models.OrderViewModel
+
+@{
+  ViewBag.Title = "Order PrebuiltPizza";
+  Layout = "_Layout";
+}
+<p>Welcome @Model.CustomerName !</p>
+<section>
+<h2>Order Custom Pizza</h2>
+@using (Html.BeginForm("AddCustomPizza", "Order", FormMethod.Post))
+{
+<p>Select a crust: </p>
+@foreach (var item in Model.Crusts)
+{
+    <input type="radio" name="crustID" id="@item.EntityID" value=@item.EntityID>
+    <label for="@item.EntityID">@item.Name</label>
+}
+<p>Select a size: </p>
+@foreach (var item in Model.Sizes)
+{
+    <input type="radio" name="sizeID" id="@item.EntityID" value=@item.EntityID>
+    <label for="@item.EntityID">@item.Name</label>
+}
+<p>Select toppings: </p>
+
+        <table>
+            @for (int i = 0; i < Model.Toppings.Count(); i++)
+            {
+            <tr>
+                <td>
+                    @Html.CheckBoxFor(m => m.ToppingSelectList[i].Selected)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.ToppingSelectList[i].Text)
+                    @Html.HiddenFor(m => m.ToppingSelectList[i].Value)
+                    @Html.HiddenFor(m => m.ToppingSelectList[i].Text)
+                </td>
+            </tr>
+            }
+        </table>
+        <br/>
+        <input type="submit" value="Submit"/>
+}
+
+</section>
+

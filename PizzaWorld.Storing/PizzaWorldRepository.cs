@@ -20,6 +20,10 @@ namespace PizzaWorld.Storing
     {
       return _ctx.Stores.Select(s => s.Name).ToList();
     }
+    public List<string> GetStoreAddresses()
+    {
+      return _ctx.Stores.Select(s => s.Address).ToList();
+    }
     public List<string> GetPizzaNames()
     {
         return _ctx.Pizzas.Select(p => p.Name).ToList();    
@@ -34,16 +38,29 @@ namespace PizzaWorld.Storing
     public IEnumerable<Store> ReadStores()
     {
 
-        return _ctx.Stores.Include(s=>s.Orders);
+        return _ctx.Stores
+                    .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Toppings)
+                    .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Crust)
+                    .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Size)
+                    .Include(u => u.Orders).ThenInclude(o => o.Store)
+                    .ToList();
  
     }
     public IEnumerable<APizzaModel> ReadPizzas()
     {
         return _ctx.Pizzas.ToList();
     }
+    public IEnumerable<Order> ReadOrders()
+    {
+        return _ctx.Orders.Include(o=>o.Pizzas)
+                            .ToList();
+                            
+    }
     public IEnumerable<PrebuiltPizza> ReadPrebuiltPizzas()
     {
-        return _ctx.PrebuiltPizzas.ToList();
+        return _ctx.PrebuiltPizzas.Include(p=>p.Crust)
+                                  .Include(p=>p.Size)
+                                  .Include(p=>p.Toppings);
     }
     public IEnumerable<Crust> ReadCrust()
     {
@@ -56,8 +73,10 @@ namespace PizzaWorld.Storing
     public IEnumerable<Customer> ReadCustomers()
     {
         var users = _ctx.Customers
-                    .Include(u => u.Orders)
-                    .ThenInclude(o => o.Pizzas)
+                    .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Toppings)
+                    .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Crust)
+                    .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Size)
+                    .Include(u => u.Orders).ThenInclude(o => o.Store)
                     .ToList();
         return users;
     }
@@ -143,6 +162,10 @@ namespace PizzaWorld.Storing
             _ctx.SaveChanges();
         }
     }
+    public void Update()
+    {
+        _ctx.SaveChanges();
+    }
     public void UpdateStore(Store store)
     {
         var s =  _ctx.Stores.ToList().FirstOrDefault(x => x.EntityID==store.EntityID);
@@ -155,6 +178,13 @@ namespace PizzaWorld.Storing
             s.Orders = store.Orders;
             _ctx.SaveChanges();
         }
+    }
+    public Order GetLastOrder()
+    {
+        return _ctx.Orders.Include(o=>o.Pizzas).ThenInclude(p=>p.Crust)
+                          .Include(o=>o.Pizzas).ThenInclude(p=>p.Size)
+                          .Include(o=>o.Pizzas).ThenInclude(p=>p.Toppings)
+                          .ToList().Last();
     }
     public void UpdateOrder(Order order)
     {

@@ -1,0 +1,53 @@
+@model PizzaWorld.Client.Models.OrderViewModel
+
+@{
+  ViewBag.Title = "Order Review";
+  Layout = null;
+}
+<h2>Shopping Cart</h2>
+<section>
+    <ul class = "list-group">
+        @{if(Model.PizzaViews != null)
+        {
+            @foreach (var item in Model.PizzaViews)
+            {
+            <li class = "list-group-item"> 
+                <ul class = "list-group px-1 py-1">
+                    <li class = "list-group-item list-group-item-primary">
+                        @item.Name
+                    </li>
+                    <li class = "list-group-item border-0 px-1 py-1">
+                        Crust: @item.Crust
+                    </li>
+                    <li class = "list-group-item border-0 px-1 py-1">
+                        Size: @item.Size
+                    </li>
+                    <li class = "list-group-item border-0 px-1 py-1">Toppings: 
+                        <ol class = "list-group">
+                            @{foreach (var topping in item.ToppingNames)
+                            {
+                                <li class = "list-group-item border-0 px-1 py-1">
+                                    @topping
+                                </li>
+                            }}
+                        </ol>
+                    </li>
+                    <li class = "list-group-item px-1 py-1">
+                        Price:$ @item.Price
+                    </li>
+                </ul>
+                
+            </li>
+            }
+        }
+        else
+        {
+            <p>Cart is empty!</p>
+        }
+        }
+        <li class = "list-group-item px-1 py-1">The Order Total is: $ @Model.Price</li>
+    </ul>
+
+<p>Thank you @TempData.Peek("CustomerName") !</p>
+</section>
+

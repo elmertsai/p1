@@ -1,0 +1,37 @@
+body {
+    background-color: lightblue;
+  }
+.row-equal-height {
+    display: flex;
+}
+#menu {
+  margin-bottom: auto;
+  padding-bottom: auto;
+}
+ol li.list-group-item { 
+  list-style: decimal inside;
+  display: list-item;
+}
+span.tab-space {
+  word-spacing:5em;
+}
+
+
+.card-input-element {
+  display: none;
+}
+
+.card-input {
+  margin: 10px;
+  padding: 00px;
+  /* background-color: rgb(145, 155, 177); */
+}
+
+.card-input:hover {
+  cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+   box-shadow: 0 0 1px 1px #000000;
+   background-color: rgb(85, 194, 228);
+}
