@@ -52,6 +52,7 @@ namespace PizzaWorld.Storing
                     .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Toppings)
                     .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Crust)
                     .Include(u => u.Orders).ThenInclude(o => o.Pizzas).ThenInclude(p => p.Size)
+                    .Include(u => u.Orders).ThenInclude(o => o.Customer)
                     .FirstOrDefault(s=>s.Name==storeName).Orders;
     }
     public IEnumerable<APizzaModel> ReadPizzas()
