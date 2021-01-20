@@ -40,17 +40,7 @@
     }
   </div>
 </div>
-@* @foreach (var item in Model.StoreView.Stores)
-{
-    <input type="radio" name="store" id="@item" value=@item>
-    <label for="@item">@item</label>
-} *@
-@* <p>Choose a username</p>
-@foreach (var item in Model.Customers)
-{
-    <input type="radio" name="CustomerID" id="@item.EntityID" value=@item.EntityID>
-    <label for="@item.EntityID">@item.Name</label>
-} *@
+
 <br>
 
 <button type="submit">Go to Pizza Ordering</button>
@@ -62,9 +52,3 @@
   
 </div>
 
-@*tag helper way*@
-@* <form asp-action="post" asp-controller="order" method="post" asp-antiforgery= "true">
-
-        <input type="radio" asp-for="@Model.Stores"name = "@Model.Store">
-        
-</form> *@

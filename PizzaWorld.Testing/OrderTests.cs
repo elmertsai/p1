@@ -24,29 +24,14 @@ namespace PizzaWorld.Testing
         private void Test_CalculatePrice()
         {
             var sut = new Order();
-            List<APizzaModel> p = new List<APizzaModel>();
+            sut.Pizzas = new List<APizzaModel>();
             APizzaModel pizza = new Pizza();
             pizza.Price = 20;
-            p.Add(pizza);
+            sut.Pizzas.Add(pizza);
             sut.CalculatePrice();
             var actual = sut.Price;
 
             Assert.IsType<double>(actual);
-            //Assert.NotNull(actual);
-        }
-        [Fact]
-        private void Test_ToString()
-        {
-            // arrange
-            // sut: Subject Under Test
-            var sut = new Order(); // inference
-
-            // act
-            var actual = sut.ToString();
-
-            // assert
-            Assert.IsType<string>(actual);
-            Assert.NotNull(actual);
         }
     }
 }

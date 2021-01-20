@@ -14,7 +14,6 @@ namespace PizzaWorld.Client.Controllers
     [Route("[controller]")]
     public class OrderController : Controller
     {
-        // private readonly PizzaWorldContext _ctx;
         private readonly PizzaWorldRepository _repo;
 
         public OrderController(PizzaWorldRepository repo)
@@ -64,7 +63,6 @@ namespace PizzaWorld.Client.Controllers
         {
             var model = new OrderViewModel()
             {
-                // Stores = _repo.GetStoreNames().ToList()
                 PizzaNames = _repo.GetPizzaNames().ToList()
                 ,PrebuiltPizzas = _repo.ReadPrebuiltPizzas().ToList()
                 ,Toppings = _repo.ReadTopping().ToList()
@@ -80,7 +78,7 @@ namespace PizzaWorld.Client.Controllers
 
             var model = new OrderViewModel()
             {
-                // Stores = _repo.GetStoreNames().ToList()
+
                 PizzaNames = _repo.GetPizzaNames().ToList()
                 ,PrebuiltPizzas = _repo.ReadPrebuiltPizzas().ToList()
                 ,Toppings = _repo.ReadTopping().ToList()
@@ -128,10 +126,6 @@ namespace PizzaWorld.Client.Controllers
                 TempData["StoreName"] = model.store;
                 TempData["CustomerName"] = order.Customer.Name;
 
-                // var o = _repo.ReadOrders().ToList();
-                
-                // o.Add(order);
-                
                 _repo.Save(order);
 
                 return View("OrderMenu",model.Order);
@@ -154,20 +148,6 @@ namespace PizzaWorld.Client.Controllers
                 pizza.Toppings = prebuiltpizza.Toppings;
                 pizza.Name = prebuiltpizza.Name;
                 pizza.SetPrice();
-
-                // var temporder = TempData.Get<Order>("TempOrder");
-                // if(temporder ==null)
-                // {
-                //     Console.WriteLine("Something went wrong with storing temporder");
-                // }
-                // if(temporder.Pizzas==null)
-                // {
-                //     temporder.Pizzas = new List<APizzaModel>();
-                // }
-                // temporder.Pizzas.Add(pizza);
-                // temporder.CalculatePrice();
-                // model.Price = temporder.Price;
-                // Console.WriteLine("The temporder has this many pizzas: "+ temporder.Pizzas.Count);
 
                 if(order.Pizzas==null)
                 {
@@ -209,6 +189,10 @@ namespace PizzaWorld.Client.Controllers
             if (ModelState.IsValid)
             {
                 var order = _repo.GetLastOrder();
+                if( order == null)
+                {
+                    order = new Order();
+                }
                 Console.WriteLine(model.ToppingSelectList);
                 List<Topping> toppings= new List<Topping>();
                 foreach (var item in model.ToppingSelectList)

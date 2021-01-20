@@ -34,16 +34,6 @@ namespace PizzaWorld.Client.Models
         
 
         public string pizza {get;set;}
-        // public OrderViewModel()
-        // {
-        //     Stores = new List<Store>()
-        //     {
-        //         new Store(){Name = "Store1"}
-        //         ,new Store(){Name = "Store2"}
-        //         ,new Store(){Name = "Store3"}
-
-        //     };
-        // }
 
     }
 }

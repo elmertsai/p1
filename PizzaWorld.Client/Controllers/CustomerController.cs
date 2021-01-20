@@ -31,9 +31,7 @@ namespace PizzaWorld.Client.Controllers
 
       customer.Order = new OrderViewModel()
       {
-        // Stores = _repo.GetStoreNames().ToList()
         PizzaNames = _repo.GetPizzaNames().ToList()
-        // ,Pizzas = _repo.ReadPizzas().ToList()
         ,PrebuiltPizzas = _repo.ReadPrebuiltPizzas().ToList()
         ,Toppings = _repo.ReadTopping().ToList()
       };
