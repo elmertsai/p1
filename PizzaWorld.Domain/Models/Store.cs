@@ -50,7 +50,7 @@ namespace PizzaWorld.Domain.Models
         }
         public override string ToString()
         {
-            return String.Format("{0,-10} {1,-10}",Name,Address);
+            return Name;
         }
     }
 }

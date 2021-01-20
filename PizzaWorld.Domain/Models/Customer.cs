@@ -16,7 +16,11 @@ namespace PizzaWorld.Domain.Models
 
         public override string ToString()
         {
-            return $"I have selected this store: {SelectedStore.Name}"; //$ String interpolation
+            if(Name != null)
+            {
+                return Name;
+            }
+            return "CustomerNameNotFound"; //$ String interpolation
         }
     
     }

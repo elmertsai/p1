@@ -11,7 +11,7 @@
 <p>Select a prebuilt pizza: </p>
 @foreach (var item in Model.PrebuiltPizzas)
 {
-    <input type="radio" name="pizza" id="@item.EntityID" value=@item.EntityID>
+    <input type="radio" name="pizza" id="@item.EntityID" value=@item.EntityID required>
     <label for="@item.Name">@item.Name</label>
 }
 <button type="submit">Add Pizza</button>:

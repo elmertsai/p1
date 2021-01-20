@@ -1,21 +1,21 @@
-@model PizzaWorld.Client.Models.CustomerViewModel
-
+@model PizzaWorld.Client.Models.StoreViewModel
 @{
-  ViewBag.Title = "Customer Order History";
+  ViewBag.Title = "Store Order History";
   Layout = "_Layout";
 }
-<h1>Order History of @TempData.Peek("CustomerName")</h1>
+<h1>Order History of @Model.SelectedStoreName</h1>
+<h4>Total Revenue is $ @Model.Revenue Dollars</h4>
 <section>
     <ul class = "list-group">
-        @{if(Model.Customer.Orders != null)
+        @{if(Model.StoreOrderHistory != null)
         {
-            @foreach (var item in Model.Customer.Orders)
+            @foreach (var item in Model.StoreOrderHistory)
             {
                 <li class = "list-group-item" name = "orders"> 
                     <ul class = "list-group px-1 py-1">
                         <li class = "list-group-item list-group-item-primary">
                             Order Time: @item.Ordertime <span class = "tab-space">.      </span> From Store: @item.Store 
-                            <span class = "tab-space">.   </span> Customer Name: @Model.Customer.Name
+                            <span class = "tab-space">.   </span> Customer Name: @item.Customer
                         </li>
                         <li class = "list-group-item px-1 py-1">
                             The Order Total is: $ @item.Price
@@ -57,6 +57,5 @@
     </ul>
 
 
-    <p>Thank you @TempData.Peek("CustomerName") for shopping with us!</p>
+    <p>End of store history</p>
 </section>
-

@@ -15603,6 +15603,11 @@
   "RootNamespace": "PizzaWorld.Client",
   "Documents": [
     {
+      "FilePath": "/home/elmer/revature/projects/p1/PizzaWorld.Client/Views/Store/StoreOrderHistory.cshtml",
+      "TargetPath": "Views\\Store\\StoreOrderHistory.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/elmer/revature/projects/p1/PizzaWorld.Client/Views/Shared/OrderPrebuiltPizza.cshtml",
       "TargetPath": "Views\\Shared\\OrderPrebuiltPizza.cshtml",
       "FileKind": "mvc"
@@ -15625,6 +15630,11 @@
     {
       "FilePath": "/home/elmer/revature/projects/p1/PizzaWorld.Client/Views/Customer/CustomerOrderHistory.cshtml",
       "TargetPath": "Views\\Customer\\CustomerOrderHistory.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/elmer/revature/projects/p1/PizzaWorld.Client/Views/Store/StoreHome.cshtml",
+      "TargetPath": "Views\\Store\\StoreHome.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15668,6 +15678,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/elmer/revature/projects/p1/PizzaWorld.Client/Views/Store/StoreSelect.cshtml",
+      "TargetPath": "Views\\Store\\StoreSelect.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/elmer/revature/projects/p1/PizzaWorld.Client/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -15680,11 +15695,6 @@
     {
       "FilePath": "/home/elmer/revature/projects/p1/PizzaWorld.Client/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/elmer/revature/projects/p1/PizzaWorld.Client/Views/Store/Store.cshtml",
-      "TargetPath": "Views\\Store\\Store.cshtml",
       "FileKind": "mvc"
     },
     {

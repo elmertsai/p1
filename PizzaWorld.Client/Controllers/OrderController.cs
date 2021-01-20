@@ -122,18 +122,15 @@ namespace PizzaWorld.Client.Controllers
                     Console.WriteLine("Context Order is Null");
 
                 }
-                // var temporder = TempData.Get<Order>("TempOrder");
-
                 
                 
                 model.Order.Store = model.store;
                 TempData["StoreName"] = model.store;
                 TempData["CustomerName"] = order.Customer.Name;
 
-                // TempData.Put<Order>("TempOrder",order);
-                var o = _repo.ReadOrders().ToList();
+                // var o = _repo.ReadOrders().ToList();
                 
-                o.Add(order);
+                // o.Add(order);
                 
                 _repo.Save(order);
 

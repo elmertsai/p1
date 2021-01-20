@@ -10,12 +10,10 @@ namespace PizzaWorld.Client.Models
         public string SelectedStoreName { get; set;}
         public string SelectedStoreAddress { get; set;}
         public List<Store> StoreObjects { get; set; }
+        public List<Order> StoreOrderHistory {get;set;}
+        public double Revenue { get; set; }
         public StoreViewModel()
         {
-            // Stores = new List<string>()
-            // {
-            //     "Store 1","Store 2", "Store 3", "Store 4"
-            // };
         }
     }
 }

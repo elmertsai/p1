@@ -1,0 +1,47 @@
+@model PizzaWorld.Client.Models.StoreViewModel
+
+@{
+  ViewBag.Title = "Store - Selection";
+  Layout = "_Layout";
+}
+<section>
+  <h1>Choose A Store!</h1>
+</section>
+
+<form action="/store/PostStoreSelected" method="POST">
+<div class = "container">
+  <div class="row">
+    @for (int i = 0; i < Model.Addresses.Count; i++)
+    {
+      <div class="col-md-3 col-lg-3 col-sm-3">
+        <label for="@Model.SelectedStoreName">
+          <input type="radio" name="SelectedStoreName" id=@Model.Stores.ElementAtOrDefault(i) 
+          value=@Model.Stores.ElementAtOrDefault(i)  class="card-input-element">
+            <div class="panel panel-default card-input">
+              <div class="panel-heading text-center"> Store Name: @Model.Stores.ElementAtOrDefault(i)</div>
+              <div class="panel-body">
+                Address: @Model.Addresses.ElementAtOrDefault(i)
+              </div>
+            </div>
+        </label>
+      </div>
+        
+    }
+  </div>
+</div>
+@* @foreach (var item in Model.StoreView.Stores)
+{
+    <input type="radio" name="store" id="@item" value=@item>
+    <label for="@item">@item</label>
+} *@
+@* <p>Choose a username</p>
+@foreach (var item in Model.Customers)
+{
+    <input type="radio" name="CustomerID" id="@item.EntityID" value=@item.EntityID>
+    <label for="@item.EntityID">@item.Name</label>
+} *@
+<br>
+
+<button type="submit">Go to Store Home</button>
+
+</form>

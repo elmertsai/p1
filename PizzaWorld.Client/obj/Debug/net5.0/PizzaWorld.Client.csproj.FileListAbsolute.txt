@@ -38,7 +38,6 @@
 /home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/PizzaWorld.Client.pdb
 /home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/PizzaWorld.Client.genruntimeconfig.cache
 /home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/PizzaWorld.Client.csproj.CopyComplete
-/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Store/Store.cshtml.g.cs
 /home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll
 /home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
 /home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -87,3 +86,6 @@
 /home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
 /home/elmer/revature/projects/p1/PizzaWorld.Client/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
 /home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Customer/CustomerOrderHistory.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Store/StoreHome.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Store/StoreSelect.cshtml.g.cs
+/home/elmer/revature/projects/p1/PizzaWorld.Client/obj/Debug/net5.0/Razor/Views/Store/StoreOrderHistory.cshtml.g.cs

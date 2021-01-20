@@ -1,14 +1,24 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using PizzaWorld.Client.Models;
+using PizzaWorld.Storing;
 
 namespace PizzaWorld.Client.Controllers
 {
+    
     [Route("[controller]")]
     public class StoreController : Controller
     {
-        //[Route("[controller]")]
-        [HttpGet] // http://localhost:5001/store
+        
+        private readonly PizzaWorldRepository _repo;
+
+        public StoreController(PizzaWorldRepository repo)
+        {
+            _repo = repo;
+        }
+        [Route("[action]")]
+        [HttpGet]
         public IActionResult GetStoreList()
         {
             var stores = new StoreViewModel();
@@ -20,10 +30,40 @@ namespace PizzaWorld.Client.Controllers
             TempData["Stores"]= stores.Stores;
             return View("Store",new StoreViewModel());
         }
-        [HttpGet("{store}")] // http://localhost:5001/store/<SOME VALUE>
-        public IActionResult GetStore(string store)
+        [Route("[action]")]
+        [HttpGet]
+        public IActionResult StoreSelect()
         {
-            return View("Store",store);
+            StoreViewModel model = new StoreViewModel();
+            model.Addresses = _repo.GetStoreAddresses();
+            model.Stores = _repo.GetStoreNames();
+
+            return View("StoreSelect",model);
+        }
+        [Route("[action]")]
+        [HttpPost]
+        public IActionResult PostStoreSelected(StoreViewModel model)
+        {
+            TempData["SelectedStoreName"] = model.SelectedStoreName;
+            return View("StoreHome",model);
+        }
+
+        [Route("[action]")]
+        [HttpGet]
+        public IActionResult GetStoreHistory()
+        {
+            StoreViewModel model = new StoreViewModel();
+            model.SelectedStoreName = TempData.Peek("SelectedStoreName") as string;
+            model.StoreOrderHistory = _repo.GetStoreOrders(model.SelectedStoreName).ToList();
+            double revenue = 0;
+            foreach (var item in model.StoreOrderHistory)
+            {
+                revenue = revenue+item.Price;        
+            }
+
+            model.Revenue=revenue;
+            
+            return View("StoreOrderHistory",model);
         }
         
     }
