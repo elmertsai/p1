@@ -39,5 +39,5 @@ Run the script in the P1/PizzaWorld.Client/ directory
 
 ## License
 
-This project uses the following license: [MIT License](~/license.md).
+This project uses the following license: [MIT License](./license.md).
 
