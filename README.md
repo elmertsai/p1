@@ -36,12 +36,8 @@ https://docs.microsoft.com/en-us/dotnet/core/install/
 Run the script in the P1/PizzaWorld.Client/ directory
 > dotnet run 
 
-## Usage
-
-> Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
-
 
 ## License
 
-This project uses the following license: [<MIT License>](./license.md).
+This project uses the following license: [<MIT License>](~/license.md).
 
